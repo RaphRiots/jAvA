@@ -60,3 +60,7 @@ main{
     height: 120px;
     background-color: blue;
 }
+
+#comment{
+    font-size: 20px;
+}
