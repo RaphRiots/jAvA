@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Second Dom</title>
+    <script src="assets/java/dom2.js" defer ></script>  <!-- Script für JS-Datei (mit "defer" solte es manchmal gehen)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <nav>
+        <div class="sidenav">
+            <a href="index.html"><h3>Menü</h3></a>
+            <a href="javaStart.html"><h5>Java-Page</h5></a>
+            <a href="dom.html"><h5>Dom-Page</h5></a>
+            <a href="mySecondDom.html" class="Dom"><h5>Dom II-Page</h5></a>
+            <a href="logicalExpr.html" class="Dom"><h5>Log. Expr</h5></a> 
+            <a href="validation.html" class="Dom"><h5>Validation</h5></a>
+            <a href="form.html" class="Dom"><h5>Form</h5></a>   
+        </div>
+    </nav>
+    <main>
+        <!-- Aufgabe A -->
+<!--a)  Vorbereitung: Lege zwei Buttons jeweils mit Identifikator (id) 
+        und Beschriftung an.
+        Aufgabe: Auf Mausklick gib id und Beschriftung des gewählten Buttons 
+        in der Konsole des Browsers aus. -->
+
+        <div class="alert alert-info border border-primary" role="alert">
+        <h1>Aufgabe A</h1>
+        <p>Vorbereitung: Lege zwei Buttons jeweils mit Identifikator (id) 
+            und Beschriftung an.<br>
+            Aufgabe: Auf Mausklick gib "id" und Beschriftung des gewählten Buttons 
+            in der Konsole des Browsers aus.</p>
+        <script>
+        function logButtonIdentifaction(element){
+            console.log(element.id, element.innerText);
+        }
+        </script>
+
+        <button type    ="button"
+                class   ="btn btn-primary"
+                id      ="defaultButton"
+                onclick ="logButtonIdentifaction(this);">Default</button>
+        <button type    ="button"
+                class   ="btn btn-success"
+                id      ="successButton"
+                onclick ="logButtonIdentifaction(this);">Success</button>
+        </div>
+
+        <!-- Aufgabe B -->
+<!-- b) Vorbereitung: Lege einen "JA" Button an.
+        Aufgabe: Auf Mausklick wechsle die Beschriftung des Buttons auf "NEIN",
+        wenn vorher "JA" sichtbar war - und umgemkehrt (toggle). -->
+        <div class="alert alert-info border border-info" role="alert">
+        <h1>Aufgabe B</h1>
+        <p>Vorbereitung: Lege einen "JA" Button an.<br>
+            Aufgabe: Auf Mausklick wechsle die Beschriftung des Buttons auf "NEIN",
+            wenn vorher "JA" sichtbar war - und umgemkehrt (toggle).</p>
+        <script>
+            function toggleYesNo(element){
+                if (element.innerText === "BUT NO"){
+                    element.innerText = "BUT YEAH";
+                }
+                else{ //innerText ist "JA"
+                    element.innerText = "BUT NO"
+                }
+            }
+        </script>
+        <button type     ="button"
+                class    = "btn btn-primary"
+                onclick  ="toggleYesNo(this);">YEAH</button>
+        </div>
+
+        <!-- Aufgabe C -->
+<!-- c) Vorbereitung: Lege einen eingefärbten Kreis (CSS Circle) und den Button
+        "Löschen" daneben an.
+        Aufgabe: Auf Mausklick lösche den Kreis.       -->  
+    <div class="alert alert-danger border-2 border-danger" role="alert">
+        <h1>Aufgabe C</h1>
+        <p>Vorbereitung: Lege einen eingefärbten Kreis (CSS Circle) und den Button
+            "Löschen" daneben an.<br>
+            Aufgabe: Auf Mausklick lösche den Kreis.</p>
+            <script>
+                function deleteCircle(id){
+                    document.getElementById(id).remove();
+
+                }
+            </script>
+        <div id="circle"></div>
+        <button type="button"
+                class="btn btn-danger"
+                onclick="deleteCircle('circle');">Löschen</button>
+    </div>
+
+        <!-- Aufgabe D  --> 
+<!-- d) Vorbereitung: Lege einen Paragraphen mit 
+        "<p><span>Anzahl Clicks:</span> <span>0</span></p>" 
+        und daneben einen Button mit "increment" beschriftet an.
+        Aufgabe: Auf Mausklick erhöhe die Zahl jeweils mit 1.   -->      
+    <div class="alert alert-info border border-primary" role="alert">
+        <h1>Aufgabe D</h1>
+        <p>Vorbereitung: Lege einen Paragraphen mit 
+            "p" "span" Anzahl Clicks: "/span" "span" 0 "/span" "/p" 
+            und daneben einen Button mit "increment" beschriftet an.<br>
+            Aufgabe: Auf Mausklick erhöhe die Zahl jeweils mit 1.</p>
+            <script>
+                function increment(id){
+                    //Konvertier den innerText "(String) in einen Integer mit parseInt().
+  /*                let count = parseInt(document.getElementById(id).innerText);
+                    document.getElementById(id).innerText = count + 1 */
+
+                    let element = document.getElementById(id);
+                    let count = parseInt(element.innerText);
+
+                    element.innerText =count + 1;
+
+
+                    /* Simplere Hack version mit ++ */
+/*                     function increment(id){
+                        docuemtn.getElementById(id).innerText++;
+                    } */
+
+
+                }
+            </script>
+
+        <p><span>Anzahl Clicks </span><span id="clickCount">0</span></p>
+
+        <button type="button"
+                class="btn btn-primary"
+                onclick="increment('clickCount');">Increment</button>
+    </div>
+
+        <!-- Aufgabe E -->
+<!-- e) Vorbereitung: Lege ein blaues <div> an (120px, 160px). 
+        Aufgabe: Wechsle die Farbe des <div> sobald der Mauszeiger darüber fährt
+        und wechsle zurück, sobald der Mauszeiger das <div> wieder verlässt.  -->
+        <div class="alert alert-info border border-primary" role="alert">
+            <h1>Aufgabe E</h1>
+            <p>Vorbereitung: Lege ein blaues "div" an (120px, 160px).<br> 
+                Aufgabe: Wechsle die Farbe des "div" sobald der Mauszeiger darüber fährt
+                und wechsle zurück, sobald der Mauszeiger das "div" wieder verlässt.</p>
+                <script>
+                    function changeColor(element, colorName){
+                        element.style.backgroundColor = colorName;
+
+                    }
+                </script>
+            <div id="hotspot"
+            onmouseover ="changeColor(this,'red')";
+            onmouseout  ="changeColor(this, 'blue')";>
+            </div>
+    
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Form Validation</title>
+    <script src="assets/java/dom2.js" defer ></script>  <!-- Script für JS-Datei (mit "defer" solte es manchmal gehen)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+    <main>
+        <nav>
+            <div class="sidenav">
+                <a href="index.html"><h3>Menü</h3></a>
+                <a href="javaStart.html"><h5>Java-Page</h5></a>
+                <a href="dom.html"><h5>Dom-Page</h5></a>
+                <a href="mySecondDom.html" class="Dom"><h5>Dom II-Page</h5></a>
+                <a href="logicalExpr.html" class="Dom"><h5>Log. Expr</h5></a> 
+                <a href="validation.html" class="Dom"><h5>Validation</h5></a> 
+                <a href="form.html" class="Dom"><h5>Form</h5></a>  
+            </div>
+
+            <h1 id="app">Bitte trage deine vollständigen Angaben ein!</h1>
+
+            <div class="alert alert-info border border-primary" role="alert">
+
+                <form id="form1" targer="_self" onsubmit="alertFunction()">
+                    <fieldset>
+                        <legend><h1>Personalien:</h1></legend>
+
+                        <label for  ="gender">Geschlecht</label><br>
+                        <select id="gender">
+                          <option value="Mann">Mann</option>
+                          <option value="Frau">Frau</option>
+                          <option value="Non-Bin">Non-Binär</option>
+                        </select>
+                        <br>
+
+                        <label for  ="vName">Vorname:</label><br>
+                        <input type ="text"     id="vName"  name="vName"    /*value="Rio"*/         required><br>        
+                        
+                        <label for  ="nName">Nachname:</label><br>
+                        <input type ="text"     id="nName"  name="nName"    /*value="Burbi"*/       required><br>
+
+                        <label for  ="birthday">Geburtstag:</label><br>
+                        <input type ="date"     id="birthday"  name="birthday"    /*value="Burbi"*/       required><br>
+
+                        <label for  ="firm">Firma:</label><br>
+                        <input type ="text"     id="firm"   name="firm"     /*value="Global Corp."*/ required><br><br>
+                        
+                        <label for  ="email">E-Mail:</label><br>
+                        <input type ="email"    id="email"  name="email"     /*value="MayMusterFrau@zuerich.ch"*/ required><br><br> 
+
+                        <label for  ="age"> Alter (Zwischen 1 und 99):</label><br>
+                        <input type ="number"   id="age"    name="age"      min="1" max="99"    required><br><br>
+
+                        <button onclick= "validateVorName(); validateNachName(); validateAge();" type="submit" form="form1" value="Submit">Validieren</button> 
+                        <input type="Reset">
+                    </fieldset>
+                </form>
+            </div>
+
+        </nav>
+    </main>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Start</title>
+    <script src="assets/java/java.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        console.log("Hallo ich!");
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="sidenav">
+            <a href="index.html"><h3>Menü</h3></a>
+            <a href="javaStart.html"><h5>Java-Page</h5></a>
+            <a href="dom.html"><h5>Dom-Page</h5></a>
+            <a href="mySecondDom.html" class="Dom"><h5>Dom II-Page</h5></a>
+            <a href="logicalExpr.html" class="Dom"><h5>Log. Expr</h5></a>
+            <a href="validation.html" class="Dom"><h5>Validation</h5></a>
+            <a href="form.html" class="Dom"><h5>Form</h5></a>   
+          </div>
+    </nav>
+    <main>
+    <!-- <body onload="alert('Hallo du!!!');"> -->
+        <!-- HELLO WORLD  -->
+        <div class="alert alert-info borders" role="alert">
+            <p><u>HELLO WORLD</u></p>
+            <p>Hello World</p>
+            <script> document.write( "<p>Hallo schon wieder<p>")</script>
+            <script>
+                let eins= 1;
+                var drei =3;
+
+                document.write("<p>" + eins + drei + "3" + "</p>");
+
+                const a = 1;
+                const b = 3;
+                let c = a+b;
+                document.write(c);
+
+                const d = "C";
+                const e = "H";
+                let f = d+e;
+                document.write('<br>'+f);                
+            </script>
+        </div>
+
+        <!-- DU EI! -->
+        <div class="alert alert-info" role="alert">
+            <p><u>DU EI</u></p>
+            <script> 
+                news();
+            </script>
+        </div>
+
+        <!-- DISTANCE TO MILES -->
+        <div class="alert alert-info" role="alert">
+            <p><u>DISTANCE TO MILES</u></p>
+            <script> 
+                let distanceInMiles = 13.556;
+                document.write( "<p>" + mToKm(distanceInMiles) + "</p>");
+            </script>
+        </div>
+
+        <!-- PIZZA ORDER -->
+        <div class="alert alert-info" role="alert">
+            <p><u>PIZZA ORDER</u></p>
+            <script> 
+
+                let fname ="Johnny";
+                let zutat= "Hawaii";
+
+                document.write ( "<p>" + getPizzaOrder ('Burb', 'Diavola') + "</p>");
+                document.write ( "<p>" + getPizzaOrder ('Rio', 'Quattro Fromagi') + "</p>");
+                document.write ( "<p>" + getPizzaOrder ( fname, zutat) + "</p>");
+                document.write ( "<p>" + getPizzaOrder () + "</p>");
+
+            </script>
+        </div>
+
+        <!-- TO UPPER CASE -->
+        <div class="alert alert-info" role="alert">
+            <p><u>TO UPPER CASE</u></p>
+            <script>
+                document.write ( "<p>" + toUpperCase('you are lame') + "</p>");
+            </script>
+        </div>
+
+        <!-- CALCULATE RADIUS -->
+        <div class="alert alert-info" role="alert">
+            <p><u>CALCULATE RADIUS</u></p>
+            <script>
+                var radius=20;
+                document.write ( "<p>" + circumference(radius)  + "</p>");
+            </script>
+        </div>
+        
+        <!-- NICE WEATHER -->
+        <div class="alert alert-info" role="alert">
+            <p><u>NICE WEAHTER</u></p>
+            <script>
+                let niceweather= true;
+                document.write ( "<p>" + weather(niceweather)  + "</p>");
+            </script>
+        </div>
+
+        <!-- AGE VERIFICATION -->
+        <div class="alert alert-info" role="alert">
+            <p><u>AGE VERIFICATION</u></p>
+            <script>
+                let age= 19;
+                document.write ( "<p>" + old(age)  + "</p>");
+            </script>
+        </div>
+
+
+<!--         <div class="alert alert-info" role="alert">
+            <script>
+                
+            const day =   Date.toLocaleDateString('en-US', {
+                weekday: 'long',
+            });
+                document.write ( "<p>" + day  + "</p>");
+
+            </script> -->
+        </div>
+
+        <!-- NUMMBER PLAYS 1 -->
+        <div class="alert alert-info" role="alert">
+            <p><u>NUMMBER PLAYS 1</u></p>
+            <script>
+                for (let i = 0; i < 20; i++){
+                    document.writeln(i);
+                }
+            </script>
+        </div>
+        <!-- NUMMBER PLAYS 2 -->
+        <div class="alert alert-info" role="alert">
+            <p><u>NUMMBER PLAYS 2</u></p>
+            <script>
+                for (let i = 0; i < 100; i++){
+                    document.writeln(i);
+                    if( i == 45){
+                        break;
+                    }
+                }
+            </script>
+        </div>
+        <!-- NUMMBER PLAYS 3 -->
+        <div class="alert alert-info" role="alert">
+            <p><u>NUMMBER PLAYS 3</u></p>
+            <script>
+                for (let i = 0; i <= 10; i++){
+                    if( i == 2){
+                        continue;
+                    }
+                    document.writeln(i);
+                }
+            </script>
+        </div>
+
+        <!-- WEEK DAYS -->
+        <div class="alert alert-info" role="alert">
+            <p><u>WEEK DAYS</u></p>
+            <script>
+                weekDays()            
+            </script>
+        </div>
+        
+        <!-- DAYS OF THE WEEK -->
+        <!-- Loops "n = x" Times the Sentence "I love Java Script" -->
+        <div class="alert alert-info" role="alert">
+            <p><u>DAYS OF THE WEEK</u></p>
+            <script>
+                const n = 4;
+                for (let i = 1; i <= n; i++)
+                    document.write('I love JavaScript.'+ '<br>');
+                
+            </script>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+            <p><u>DAILY ACTIVITIES</u></p>           
+            <script>
+                daily();
+            </script>
+        </div>
+        
+        <!-- WEATHER DATA -->
+        <div class="alert alert-info" role="alert">
+            <p><u>WEATHER DATA</u></p>           
+            <script>
+                logWeatherData();
+            </script>
+        </div>
+
+        <!-- FULL NAME-->
+        <div class="alert alert-info" role="alert">
+            <p><u>FULL NAME</u></p>           
+            <script>
+                bigName()
+            </script>
+        </div>
+
+        <!-- FULL -->
+        <!-- Parameter wird in html und js anders definiert -->
+        <div class="alert alert-info" role="alert">
+            <p><u>FULL</u></p>           
+            <script>
+                let z= 12;
+                divi(z)
+            </script>
+        </div>
+
+
+        <!-- HEROES-->
+        <div class="alert alert-info" role="alert">
+            <p><u>HEROES</u></p>           
+            <script>
+                logUsers();         
+            </script>
+        </div>
+<!--         <div class="alert alert-info" role="alert">
+            <p><u>HEROES II</u></p>           
+            <script>
+                filter();        
+            </script>
+        </div> -->
+    </main>
+    </body>
+</html>
